@@ -1,0 +1,90 @@
+{
+  "theme": "light",
+  "archetype": "Organic & Earthy + Vibrant Play (Tropical Cafe)",
+  "colors": {
+    "background": "#FDFBF7",
+    "surface": "#FFFFFF",
+    "primary": "#FF9F1C",
+    "primary_foreground": "#1E1E1E",
+    "secondary": "#1B4332",
+    "secondary_foreground": "#FFFFFF",
+    "accent": "#F4A261",
+    "muted": "#F3EFE6",
+    "border": "#EAE6DF",
+    "text_primary": "#1E1E1E",
+    "text_secondary": "#5C5C5C",
+    "whatsapp": "#25D366",
+    "whatsapp_foreground": "#FFFFFF"
+  },
+  "typography": {
+    "headings": "Fraunces",
+    "subheadings": "Outfit",
+    "body": "DM Sans",
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter font-semibold",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium",
+      "h3": "text-xl sm:text-2xl tracking-tight font-medium",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-base leading-relaxed",
+      "labels": "text-xs tracking-[0.2em] uppercase font-bold"
+    }
+  },
+  "layout_and_spacing": {
+    "general": "Generous spacing. p-6 to p-12 for sections. Mobile-first responsive grids.",
+    "hero": "Asymmetrical split or overlapping bento layout. Use large display typography. Avoid standard centered text on full background.",
+    "menu_grid": "Bento style for categories or standard grids. grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6.",
+    "border_radius": "rounded-2xl or rounded-3xl for a friendly, soft, organic feel. Avoid sharp brutalist edges.",
+    "mobile_nav": "Sticky bottom cart drawer or floating action button for easy access on mobile."
+  },
+  "components": {
+    "buttons": "Pill-shaped (rounded-full) or large rounded (rounded-xl). Hover state: slightly darker hue, -translate-y-1. Primary CTA uses #FF9F1C with dark text (#1E1E1E).",
+    "cards": "Subtle warm shadows (shadow-[0_8px_30px_rgb(27,67,50,0.04)]). 1px border (#EAE6DF). Solid surfaces, no glassmorphism for food items to maintain appetizing contrast.",
+    "cart_drawer": "Shadcn Sheet component. Must show subtotal clearly and explicitly mention '+ ₹5 parcel charge per item'.",
+    "checkout_form": "Shadcn Form. Segmented control (Radio Group style) for Outlet (East Fort / West Fort) is MANDATORY before placing the order.",
+    "whatsapp_button": "Use the dedicated green (#25D366) specifically for the WhatsApp final CTA to build trust and familiarity."
+  },
+  "motion_and_interactions": {
+    "hover": "Scale up images on hover (scale-105 with overflow-hidden on parent). Button lifts.",
+    "page_load": "Staggered fade-up for menu items.",
+    "cart_add": "Micro-interaction: Button changes to 'Added' momentarily, or small badge pop/bounce on the cart icon."
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1748718825814-fa2d2a3f641e",
+      "category": "hero",
+      "description": "Mango shake splash cocktail - use for hero section background or main feature graphic."
+    },
+    {
+      "url": "https://images.pexels.com/photos/15141036/pexels-photo-15141036.jpeg",
+      "category": "hero_accent",
+      "description": "Orange juice splash - use in bento grid or highlights section."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1712056407284-c1eda76e7bcd",
+      "category": "product_milkshake",
+      "description": "Smoothie/Shake in glass - use for popular items or category headers."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1630823185508-53c3c6566660",
+      "category": "product_falooda",
+      "description": "Red falooda dessert glass - use for popular items or menu features."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1758980960366-d344cfddd004",
+      "category": "location_interior",
+      "description": "Modern cafe interior with plants - use for the locations/contact section."
+    }
+  ],
+  "accessibility": {
+    "contrast": "Ensure white text on primary/secondary colors meets 4.5:1 ratio. Primary CTA has dark text on orange background for high legibility.",
+    "testing": "All interactive elements MUST have data-testid attributes (e.g., data-testid='add-to-cart-button', data-testid='checkout-outlet-select')."
+  },
+  "instructions_to_main_agent": [
+    "Build standard React + Tailwind CSS layout using these guidelines.",
+    "Use standard Radix/Shadcn UI components but heavily customize spacing, radius (rounded-2xl), and fonts to avoid the 'default saas' look.",
+    "Initialize React app with 'Fraunces', 'Outfit', and 'DM Sans' from Google Fonts via link tags in index.html.",
+    "Ensure 'East Fort' / 'West Fort' selection is enforced via form validation before the WhatsApp link is generated.",
+    "WhatsApp link must be formatted: `https://wa.me/<number>?text=<URL_ENCODED_ORDER_STRING>`. Format the text beautifully with line breaks.",
+    "Parcel charge logic: Total = (Sum of item prices) + (Total Quantity * 5)."
+  ]
+}
